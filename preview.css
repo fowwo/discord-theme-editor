@@ -64,9 +64,11 @@
 div#preview {
 	background-color: var(--background-tertiary);
 	margin: 15px auto;
+	width: 100%;
 	max-width: 470px;
 	height: 300px;
 	border-radius: 10px;
+	flex-shrink: 0;
 	overflow: hidden;
 }
 div#preview div {
