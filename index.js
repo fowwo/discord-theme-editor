@@ -26,6 +26,9 @@ function displayColor(color, property) {
  * @param {String} property - The color property.
  */
 function showColorInfo(property) {
+	let container = document.getElementById("palette-container");
+	container.style.visibility = "visible";
+	container.style.opacity = "100%";
 	let hex = getComputedStyle(document.documentElement).getPropertyValue(`--${property}`).trim();
 	let rgba = hexToRGBA(hex);
 	document.getElementById("selected-color").style.backgroundColor = active[property].style.backgroundColor;
