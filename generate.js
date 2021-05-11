@@ -16,11 +16,12 @@ function addSection(name, property, description = "") {
 
 	let defaultOption = createColorOption(property, `var(--default-${property})`);
 	defaultOption.classList.add("default", "active");
-	defaultOption.onclick = () => { setActiveColorOption(defaultOption, property); };
 	active[property] = defaultOption;
 	container.appendChild(defaultOption);
 	for (var i = 0; i < 10; i++) {
+		let index = i;
 		let option = createColorOption(property, `var(--p${i})`);
+		option.onclick = () => { setActiveColorOption(option, property); showColorInfo(`custom${index}`); };
 		container.appendChild(option);
 	}
 
@@ -33,7 +34,7 @@ function createColorOption(property, color) {
 	option.innerHTML = "✓";
 	option.className = "color-option";
 	option.style.backgroundColor = color;
-	option.onclick = () => { setActiveColorOption(option, property); showColorInfo(property); };
+	option.onclick = () => { setActiveColorOption(option, property); };
 	option.onmouseover = () => { displayColor(option.style.backgroundColor, property); };
 	option.onmouseout = () => { displayColor(active[property].style.backgroundColor, property); }
 	return option;

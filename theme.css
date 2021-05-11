@@ -1,15 +1,27 @@
 :root {
 
-	--p0: #a22;
-	--p1: #a82;
-	--p2: #282;
-	--p3: #258;
-	--p4: #74a;
-	--p5: #a68;
-	--p6: #40444b;
-	--p7: #60646b;
-	--p8: #90949b;
-	--p9: #c0c4cb;
+	--p0: var(--custom0);
+	--p1: var(--custom1);
+	--p2: var(--custom2);
+	--p3: var(--custom3);
+	--p4: var(--custom4);
+	--p5: var(--custom5);
+	--p6: var(--custom6);
+	--p7: var(--custom7);
+	--p8: var(--custom8);
+	--p9: var(--custom9);
+
+	/* Custom */
+	--custom0: #a22;
+	--custom1: #a82;
+	--custom2: #282;
+	--custom3: #258;
+	--custom4: #74a;
+	--custom5: #a68;
+	--custom6: #40444b;
+	--custom7: #60646b;
+	--custom8: #90949b;
+	--custom9: #c0c4cb;
 
 	/* Discord's default color palette */
 	--default-header-primary: #fff;

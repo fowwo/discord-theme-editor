@@ -12,6 +12,17 @@ function setActiveColorOption(element, property) {
 }
 
 /**
+ * Changes the currently selected color.
+ * @param {String} color - The new color.
+ */
+function setCurrentColor(color) {
+	let property = document.getElementById("selected-color").style.backgroundColor.trim();
+	property = property.substring(6, property.length - 1);
+	document.documentElement.style.setProperty(`--${property}`, color);
+	showColorInfo(property);
+}
+
+/**
  * Shows the color for a given property on the preview.
  * @param {String} color - The color.
  * @param {String} property - The color property.
@@ -30,7 +41,7 @@ function showColorInfo(property) {
 	container.style.opacity = "100%";
 	let hex = getComputedStyle(document.documentElement).getPropertyValue(`--${property}`).trim();
 	let rgba = hexToRGBA(hex);
-	document.getElementById("selected-color").style.backgroundColor = active[property].style.backgroundColor;
+	document.getElementById("selected-color").style.backgroundColor = `var(--${property})`;
 	document.getElementById("hex-input").value = hex.substring(1);
 	document.getElementById("r-value").innerHTML = rgba[0];
 	document.getElementById("g-value").innerHTML = rgba[1];
