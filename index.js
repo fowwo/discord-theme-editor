@@ -51,3 +51,59 @@ function hexToRGBA(hex) {
 	if (hex.length === 6) return [ 16 * m[hex[0]] + m[hex[1]], 16 * m[hex[2]] + m[hex[3]], 16 * m[hex[4]] + m[hex[5]], 1 ];
 	if (hex.length === 8) return [ 16 * m[hex[0]] + m[hex[1]], 16 * m[hex[2]] + m[hex[3]], 16 * m[hex[4]] + m[hex[5]], (16 * m[hex[6]] + m[hex[7]]) / 255 ];
 }
+
+/**
+ * Checks whether a color is a valid hexadecimal representation.
+ * @param {String} hex - The hexadecimal color.
+ */
+function validHex(hex) {
+	if (hex.startsWith("#")) hex = hex.substring(1);
+	hex = hex.match(/^[0-9a-fA-F]+$/);
+	return hex !== null && (
+		hex[0].length === 3 ||
+		hex[0].length === 4 ||
+		hex[0].length === 6 ||
+		hex[0].length === 8
+	);
+}
+
+/**
+ * Restricts input to certain keys that can edit text input.
+ * - Backspace
+ * - Enter
+ * - End
+ * - Home
+ * - Arrow Keys
+ * - Delete
+ * @param {Event} event - The key event.
+ * @returns {Boolean} True if the key passes the filter.
+ */
+ function inputFilter(event) {
+	let key = event.keyCode;
+	if (
+		key !== 8 && // Backspace
+		key !== 13 && // Enter
+		key !== 35 && // End
+		key !== 36 && // Home
+		(key < 37 || key > 40) && // Arrow Keys
+		key !== 46 // Delete
+	) {
+		event.preventDefault();
+		return false;
+	}
+	return true;
+}
+
+/**
+ * Restricts input to hexadecimal characters.
+ * @param {Event} event 
+ * @returns {Boolean} True if the key passes the filter.
+ */
+function hexInputFilter(event) {
+	let key = event.keyCode;
+	if (
+		(key < 48 || key > 57) && // 0 - 9
+		(key < 65 || key > 70) // a - f
+	) return inputFilter(event);
+	return true;
+}
