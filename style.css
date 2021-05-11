@@ -124,3 +124,45 @@ div.color-option:not(.active):hover {
 		inset 0 12px 10px -10px #fff1,
 		inset 0 -30px 20px -20px #0005;
 }
+div#selected-color {
+	float: left;
+	width: 70px;
+	height: 70px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px #0004,
+		inset 0 20px 20px -20px #fff1,
+		inset 0 -60px 40px -40px #0005;
+	transition: background-color 100ms linear;
+}
+div#selected-color-text {
+	float: left;
+	margin-left: 15px;
+	width: 200px;
+	height: 100%;
+}
+div#selected-color-hex, input#hex-input {
+	font-weight: bold;
+	font-size: 32px;
+	color: #d8e8ff;
+	text-shadow: 0 3px 1px #000;
+}
+input.text-input {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	font-family: 'PT Sans', sans-serif;
+	border-radius: 10px;
+	transition-property: background-color, box-shadow;
+	transition-duration: 100ms;
+}
+input.text-input:hover {
+	background-color: #0002;
+}
+input.text-input:focus {
+	outline: none;
+	background-color: #0005;
+	box-shadow: 0 0px 15px #d8e8ff18, inset 0 0 5px #0006;
+}
+input#hex-input {
+	width: 141px;
+}
