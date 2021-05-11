@@ -78,7 +78,7 @@ function validHex(hex) {
  * @param {Event} event - The key event.
  * @returns {Boolean} True if the key passes the filter.
  */
- function inputFilter(event) {
+function inputFilter(event) {
 	let key = event.keyCode;
 	if (
 		key !== 8 && // Backspace
