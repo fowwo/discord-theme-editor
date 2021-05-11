@@ -32,7 +32,9 @@ function createColorOption(property, color) {
 	option.innerHTML = "✓";
 	option.className = "color-option";
 	option.style.backgroundColor = color;
-	option.onclick = (event) => { setActiveColor(event.target, property); };
+	option.onclick = () => { setActiveColor(option, property); };
+	option.onmouseover = () => { displayColor(option.style.backgroundColor, property); };
+	option.onmouseout = () => { displayColor(active[property].style.backgroundColor, property); }
 	return option;
 }
 function hr() {
