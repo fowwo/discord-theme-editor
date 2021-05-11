@@ -18,7 +18,7 @@ function addSection(name, property, description = "") {
 	defaultOption.classList.add("default", "active");
 	active[property] = defaultOption;
 	container.appendChild(defaultOption);
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 14; i++) {
 		let index = i;
 		let option = createColorOption(property, `var(--p${i})`);
 		option.onclick = () => { setActiveColorOption(option, property); showColorInfo(`custom${index}`); };

@@ -10,18 +10,26 @@
 	--p7: var(--custom7);
 	--p8: var(--custom8);
 	--p9: var(--custom9);
+	--p10: var(--custom10);
+	--p11: var(--custom11);
+	--p12: var(--custom12);
+	--p13: var(--custom13);
 
 	/* Custom */
 	--custom0: #a22;
-	--custom1: #a82;
-	--custom2: #282;
-	--custom3: #258;
-	--custom4: #74a;
-	--custom5: #a68;
-	--custom6: #40444b;
-	--custom7: #60646b;
-	--custom8: #90949b;
-	--custom9: #c0c4cb;
+	--custom1: #b52;
+	--custom2: #a82;
+	--custom3: #282;
+	--custom4: #388;
+	--custom5: #258;
+	--custom6: #74a;
+	--custom7: #a68;
+	--custom8: #000;
+	--custom9: #222;
+	--custom10: #444;
+	--custom11: #777;
+	--custom12: #ccc;
+	--custom13: #fff;
 
 	/* Discord's default color palette */
 	--default-header-primary: #fff;
