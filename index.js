@@ -9,7 +9,6 @@ function setActiveColor(element, property) {
 	active[property].classList.remove("active");
 	active[property] = element;
 	active[property].classList.add("active");
-	showColorInfo(property);
 }
 
 /**
