@@ -40,3 +40,10 @@ function createColorOption(property, color) {
 function hr() {
 	settings.appendChild(document.createElement("hr"));
 }
+
+addHeading("Background");
+addSection("Primary", "background-primary", "The primary background color, which is used behind chat messages and guild icons.");
+addSection("Secondary", "background-secondary", "The secondary background color, which is used behind the channel and member lists.");
+addSection("Secondary Alt", "background-secondary-alt", "The alternate secondary background color, which is used behind your user information.");
+addSection("Tertiary", "background-tertiary", "The tertiary background color, which is used for the search bar and used along the outside of the window.");
+addSection("Chat Input", "channeltextarea-background", "The color of the chat input box.");
