@@ -70,6 +70,7 @@ div#preview {
 	border-radius: 10px;
 	flex-shrink: 0;
 	overflow: hidden;
+	transition: background-color 100ms linear;
 }
 div#preview div {
 	transition: background-color 100ms linear;
