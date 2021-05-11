@@ -1,0 +1,65 @@
+:root {
+
+	/* Discord's default color palette */
+	--default-header-primary: #fff;
+	--default-header-secondary: #b9bbbe;
+	--default-text-normal: #dcddde;
+	--default-text-muted: #72767d;
+	--default-text-link: #00b0f4;
+
+	--default-channels-default: #8e9297;
+	--default-interactive-normal: #b9bbbe;
+	--default-interactive-hover: #dcddde;
+	--default-interactive-active: #fff;
+	--default-interactive-muted: #4f545c;
+
+	--default-background-primary: #36393f;
+	--default-background-secondary: #2f3136;
+	--default-background-secondary-alt: #292b2f;
+	--default-background-tertiary: #202225;
+	--default-background-accent: #4f545c;
+	--default-background-floating: #18191c;
+	--default-background-mobile-primary: #36393f;
+	--default-background-mobile-secondary: #2f3136;
+	--default-background-modifier-hover: rgba(79,84,92,0.16);
+	--default-background-modifier-active: rgba(79,84,92,0.24);
+	--default-background-modifier-selected: rgba(79,84,92,0.32);
+	--default-background-modifier-accent: hsla(0,0%,100%,0.06);
+	--default-background-mentioned: rgba(250,166,26,0.05);
+	--default-background-mentioned-hover: rgba(250,166,26,0.08);
+	--default-background-message-hover: rgba(4,4,5,0.07);
+	--default-background-help-warning: rgba(250,166,26,0.1);
+	--default-background-help-info: rgba(0,176,244,0.1);
+
+	--default-scrollbar-thin-thumb: #202225;
+	--default-scrollbar-thin-track: transparent;
+	--default-scrollbar-auto-thumb: #202225;
+	--default-scrollbar-auto-track: #2e3338;
+	--default-scrollbar-auto-scrollbar-color-thumb: #202225;
+	--default-scrollbar-auto-scrollbar-color-track: #2f3136;
+
+	--default-elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+	--default-elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+	--default-elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+	--default-elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+
+	--default-logo-primary: #fff;
+	--default-focus-primary: #00b0f4;
+	--default-radio-group-dot-foreground: #8ea1e1;
+	--default-guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+	--default-channeltextarea-background: #40444b;
+	--default-activity-card-background: #202225;
+	--default-textbox-markdown-syntax: #8e9297;
+
+	--default-deprecated-card-bg: rgba(32,34,37,0.6);
+	--default-deprecated-card-editable-bg: rgba(32,34,37,0.3);
+	--default-deprecated-store-bg: #36393f;
+	--default-deprecated-quickswitcher-input-background: #72767d;
+	--default-deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+	--default-deprecated-text-input-bg: rgba(0,0,0,0.1);
+	--default-deprecated-text-input-border: rgba(0,0,0,0.3);
+	--default-deprecated-text-input-border-hover: #040405;
+	--default-deprecated-text-input-border-disabled: #202225;
+	--default-deprecated-text-input-prefix: #dcddde;
+
+}

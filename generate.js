@@ -14,7 +14,7 @@ function addSection(name, property, description = "") {
 	let container = document.createElement("div");
 	container.className = "color-option-container";
 
-	let defaultOption = createColorOption(property, `var(--${property})`);
+	let defaultOption = createColorOption(property, `var(--default-${property})`);
 	defaultOption.classList.add("default", "active");
 	active[property] = defaultOption;
 	container.appendChild(defaultOption);
