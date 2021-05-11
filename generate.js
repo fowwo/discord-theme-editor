@@ -21,7 +21,13 @@ function addSection(name, property, description = "") {
 	for (var i = 0; i < 14; i++) {
 		let index = i;
 		let option = createColorOption(property, `var(--p${i})`);
-		option.onclick = () => { setActiveColorOption(option, property); showColorInfo(`custom${index}`); };
+		option.onclick = () => {
+			let input = document.getElementById("hex-input");
+			input.disabled = false;
+			input.classList.remove("disabled");
+			setActiveColorOption(option, property);
+			showColorInfo(`custom${index}`);
+		};
 		container.appendChild(option);
 	}
 
@@ -34,7 +40,13 @@ function createColorOption(property, color) {
 	option.innerHTML = "✓";
 	option.className = "color-option";
 	option.style.backgroundColor = color;
-	option.onclick = () => { setActiveColorOption(option, property); };
+	option.onclick = () => {
+		let input = document.getElementById("hex-input");
+		input.disabled = true;
+		input.classList.add("disabled");
+		setActiveColorOption(option, property);
+		showColorInfo(property);
+	};
 	option.onmouseover = () => { displayColor(option.style.backgroundColor, property); };
 	option.onmouseout = () => { displayColor(active[property].style.backgroundColor, property); }
 	return option;
