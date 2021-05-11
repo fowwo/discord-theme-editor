@@ -90,14 +90,13 @@ div.color-option {
 	line-height: 40px;
 	font-size: 20px;
 	font-weight: bold;
+	background-image: linear-gradient(#fff2, #0000 25%, #0005);
 	color: #0000;
 	border-radius: 5px;
 	box-shadow: 0 0 0 #d8e8ff44,
 		0 5px 4px -3px #0008,
 		inset 0 0 0 #d8e8ff44,
-		inset 0 0 0 #d8e8ff,
-		inset 0 12px 10px -10px #fff1,
-		inset 0 -30px 20px -20px #0005;
+		inset 0 0 0 #d8e8ff;
 	cursor: pointer;
 	transition-property: box-shadow, color;
 	transition-duration: 100ms;
@@ -114,27 +113,22 @@ div.color-option.active {
 	color: #d8e8ff;
 	box-shadow: 0 0 15px #d8e8ff44,
 		0 5px 4px -3px #d8e8ff66,
-		inset 0 0 10px #d8e8ff44,
-		inset 0 0 0 1.5px #d8e8ff,
-		inset 0 12px 10px -10px #fff1,
-		inset 0 -30px 20px -20px #0005;
+		inset 0 0 10px #d8e8ff88,
+		inset 0 0 0 1.5px #d8e8ff;
 }
 div.color-option:not(.active):hover {
 	box-shadow: 0 0 10px #d8e8ff33,
 		0 5px 4px -3px #d8e8ff33,
-		inset 0 0 10px #d8e8ff33,
-		inset 0 0 0 1.5px #d8e8ff88,
-		inset 0 12px 10px -10px #fff1,
-		inset 0 -30px 20px -20px #0005;
+		inset 0 0 10px #d8e8ff44,
+		inset 0 0 0 1.5px #d8e8ff88;
 }
 div#selected-color {
 	float: left;
 	width: 70px;
 	height: 70px;
 	border-radius: 10px;
-	box-shadow: 0 4px 8px #0004,
-		inset 0 20px 20px -20px #fff1,
-		inset 0 -60px 40px -40px #0005;
+	background-image: linear-gradient(#fff2, #0000 25%, #0005);
+	box-shadow: 0 4px 8px #0004;
 	transition: background-color 100ms linear;
 }
 div#selected-color-text {
