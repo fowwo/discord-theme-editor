@@ -1,5 +1,16 @@
 :root {
 
+	--p0: #a22;
+	--p1: #a82;
+	--p2: #282;
+	--p3: #258;
+	--p4: #74a;
+	--p5: #a68;
+	--p6: #40444b;
+	--p7: #60646b;
+	--p8: #90949b;
+	--p9: #c0c4cb;
+
 	/* Discord's default color palette */
 	--default-header-primary: #fff;
 	--default-header-secondary: #b9bbbe;
