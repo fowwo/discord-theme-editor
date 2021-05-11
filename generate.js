@@ -1,5 +1,4 @@
 var settings = document.getElementById("settings");
-var active = {};
 
 function addHeading(text) {
 	let heading = document.createElement("h1");
@@ -15,12 +14,12 @@ function addSection(name, property, description = "") {
 	let container = document.createElement("div");
 	container.className = "color-option-container";
 
-	let defaultOption = createColorOption(`var(--${property})`);
+	let defaultOption = createColorOption(property, `var(--${property})`);
 	defaultOption.classList.add("default", "active");
 	active[property] = defaultOption;
 	container.appendChild(defaultOption);
 	for (var i = 0; i < 10; i++) {
-		let option = createColorOption(`var(--p${i})`);
+		let option = createColorOption(property, `var(--p${i})`);
 		container.appendChild(option);
 	}
 
@@ -28,11 +27,12 @@ function addSection(name, property, description = "") {
 	settings.appendChild(p);
 	settings.appendChild(container);
 }
-function createColorOption(color) {
+function createColorOption(property, color) {
 	let option = document.createElement("div");
 	option.innerHTML = "✓";
 	option.className = "color-option";
 	option.style.backgroundColor = color;
+	option.onclick = (event) => { setActiveColor(event.target, property); };
 	return option;
 }
 function hr() {
