@@ -390,7 +390,7 @@ div#preview ul#channel-list li:hover {
 }
 
 div#preview ul#channel-list li.active {
-	background-color: var(--background-modifier-active) !important;
+	background-color: var(--background-modifier-selected) !important;
 }
 div#preview ul#channel-list li div {
 	margin: 2px 2px 0 0;
