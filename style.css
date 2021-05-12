@@ -124,6 +124,13 @@ div.color-option:not(.active):hover {
 }
 div#selected-color {
 	float: left;
+	visibility: hidden;
+}
+div#selected-color::after {
+	visibility: visible;
+	content: "";
+	display: block;
+	background-color: inherit;
 	width: 70px;
 	height: 70px;
 	border-radius: 10px;
