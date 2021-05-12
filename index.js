@@ -173,7 +173,8 @@ function hexInputFilter(event) {
 	let key = event.keyCode;
 	if (
 		(key < 48 || key > 57) && // 0 - 9
-		(key < 65 || key > 70) // a - f
+		(key < 65 || key > 70) && // a - f
+		(key < 96 || key > 105) // 0 - 9 (NumPad)
 	) return inputFilter(event);
 	return true;
 }
