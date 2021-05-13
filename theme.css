@@ -32,13 +32,28 @@
 	--custom13: #fff;
 
 	/* Discord's default color palette */
+	--default-text-warning: #faa61a;
+	--default-text-danger: #ed4245;
+	--default-info-positive-background: rgba(59,165,92,0.1);
+	--default-info-positive-foreground: #3ba55c;
+	--default-info-warning-background: rgba(250,166,26,0.1);
+	--default-info-warning-foreground: #faa61a;
+	--default-info-danger-background: rgba(237,66,69,0.1);
+	--default-info-danger-foreground: #ed4245;
+	--default-status-positive-background: #3ba55c;
+	--default-status-positive-text: #fff;
+	--default-status-warning-background: #faa61a;
+	--default-status-danger-background: #ed4245;
+	--default-status-danger-text: #fff;
+	--default-focus-primary: #00b0f4;
+
 	--default-header-primary: #fff;
 	--default-header-secondary: #b9bbbe;
 	--default-text-normal: #dcddde;
 	--default-text-muted: #72767d;
 	--default-text-link: #00b0f4;
+	--default-text-positive: #4fdc7b;
 
-	--default-channels-default: #8e9297;
 	--default-interactive-normal: #b9bbbe;
 	--default-interactive-hover: #dcddde;
 	--default-interactive-active: #fff;
@@ -56,11 +71,14 @@
 	--default-background-modifier-active: rgba(79,84,92,0.24);
 	--default-background-modifier-selected: rgba(79,84,92,0.32);
 	--default-background-modifier-accent: hsla(0,0%,100%,0.06);
-	--default-background-mentioned: rgba(250,166,26,0.05);
-	--default-background-mentioned-hover: rgba(250,166,26,0.08);
-	--default-background-message-hover: rgba(4,4,5,0.07);
-	--default-background-help-warning: rgba(250,166,26,0.1);
-	--default-background-help-info: rgba(0,176,244,0.1);
+
+	--default-info-positive-text: #fff;
+	--default-info-warning-text: #fff;
+	--default-info-danger-text: #fff;
+	--default-info-help-background: rgba(0,176,244,0.1);
+	--default-info-help-foreground: #00b0f4;
+	--default-info-help-text: #fff;
+	--default-status-warning-text: #000;
 
 	--default-scrollbar-thin-thumb: #202225;
 	--default-scrollbar-thin-track: transparent;
@@ -75,8 +93,11 @@
 	--default-elevation-high: 0 8px 16px rgba(0,0,0,0.24);
 
 	--default-logo-primary: #fff;
-	--default-focus-primary: #00b0f4;
-	--default-radio-group-dot-foreground: #8ea1e1;
+	--default-control-brand-foreground: #a5b3e7;
+	--default-background-mentioned: rgba(250,166,26,0.1);
+	--default-background-mentioned-hover: rgba(250,166,26,0.08);
+	--default-background-message-hover: rgba(4,4,5,0.07);
+	--default-channels-default: #8e9297;
 	--default-guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 	--default-channeltextarea-background: #40444b;
 	--default-activity-card-background: #202225;
