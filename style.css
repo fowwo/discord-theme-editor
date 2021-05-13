@@ -11,13 +11,13 @@ body {
 	overflow: hidden;
 }
 h1 {
-	margin: 12px 0 20px 0;
+	margin: 12px 0 8px 0;
 	color: #d8e8ff;
 	line-height: 24px;
 	text-shadow: 0 3px 1px #000;
 }
 h3 {
-	margin: 0;
+	margin: 20px 0 0 0;
 	color: #d8e8ff;
 	text-shadow: 0 2px 1px #000;
 }
@@ -80,7 +80,6 @@ div#settings::-webkit-scrollbar-thumb:hover {
 }
 div.color-option-container {
 	display: flex;
-	margin-bottom: 20px;
 	user-select: none;
 }
 div.color-option {
