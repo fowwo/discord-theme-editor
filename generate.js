@@ -30,7 +30,7 @@ function addSection(name, property, description = "") {
 			let input = document.getElementById("hex-input");
 			input.disabled = false;
 			setActiveColorOption(option, property);
-			showColorInfo(`custom${index}`);
+			showColorInfo(`p${index}`);
 		};
 		container.appendChild(option);
 	}
