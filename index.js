@@ -18,7 +18,7 @@ function setActiveColorOption(element, property) {
 function setCurrentColor(color) {
 	let property = document.getElementById("selected-color").style.backgroundColor.trim();
 	property = property.substring(6, property.length - 1);
-	document.documentElement.style.setProperty(`--${property}`, color);
+	document.documentElement.style.setProperty(`--custom${property.substring(1)}`, color);
 	showColorInfo(property);
 }
 
