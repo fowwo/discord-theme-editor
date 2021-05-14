@@ -4,6 +4,33 @@ var activeTheme;
 var themes = {
 	"custom": {
 		"name": "Custom"
+	},
+	"monokai": {
+		"name": "Monokai",
+		"background-primary": 1,
+		"background-secondary": 0,
+		"background-secondary-alt": 2,
+		"background-tertiary": 3,
+		"channeltextarea-background": 0,
+		"background-floating": 5,
+		"background-message-hover": 2,
+		"background-accent": 4,
+		"text-normal": 7,
+		"text-muted": 5,
+		"header-primary": 7,
+		"header-secondary": 6,
+		"channels-default": 5,
+		"interactive-normal": 6,
+		"interactive-hover": 7,
+		"interactive-active": 8,
+		"interactive-muted": 3,
+		"background-modifier-hover": 1,
+		"background-modifier-active": 3,
+		"background-modifier-selected": 2,
+		"background-modifier-accent": 4,
+		"scrollbar-auto-thumb": 3,
+		"scrollbar-auto-track": 0,
+		"scrollbar-thin-thumb": 2
 	}
 };
 

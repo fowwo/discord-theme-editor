@@ -31,6 +31,17 @@
 	--custom12: #ccc;
 	--custom13: #fff;
 
+	/* Monokai */
+	--monokai0: #1f201c;
+	--monokai1: #272822;
+	--monokai2: #313127;
+	--monokai3: #3e3d32;
+	--monokai4: #414339;
+	--monokai5: #75715e;
+	--monokai6: #88846f;
+	--monokai7: #f8f8f2;
+	--monokai8: #fff;
+
 	/* Discord's default color palette */
 	--default-text-warning: #faa61a;
 	--default-text-danger: #ed4245;
