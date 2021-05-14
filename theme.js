@@ -36,6 +36,9 @@ var themes = {
 
 function loadTheme(theme) {
 
+	document.getElementById("theme-name-txt").innerHTML = themes[theme].name;
+	document.getElementById("theme-name-csv").innerHTML = themes[theme].name;
+
 	// Remove selected colors
 	Object.keys(active).forEach((property, propertyIndex, properties) => {
 		active[property].classList.remove("active");
@@ -61,6 +64,25 @@ function loadTheme(theme) {
 			active[container.id] = container.children[themes[theme][container.id] + 1];
 		}
 	};
+}
+
+function downloadTheme(theme, extension) {
+	let str = ".theme-dark, .theme-light {\n";
+	theme = theme.toLowerCase();
+	Object.keys(themes[theme]).forEach((property, propertyIndex, properties) => {
+		if (themes[theme][property] !== undefined && property !== "name") {
+			str += `\t--${property}: ${getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme][property]}`)};\n`;
+		}
+	});
+	str += "}\n";
+
+	let a = document.createElement('a');
+	a.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(str));
+	a.setAttribute('download', `${theme}-theme.${extension}`);
+	a.style.display = 'none';
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
 }
 
 function setEditing(bool) {

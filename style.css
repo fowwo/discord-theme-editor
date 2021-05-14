@@ -81,7 +81,12 @@ div#theme-container {
 	flex-basis: content;
 	justify-content: space-evenly;
 }
-div.theme {
+div#theme-settings {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+div.theme, div#theme-settings div {
 	margin: 5px;
 	background-color: #0005;
 	background-image: linear-gradient(#fff2, #0000 25%, #0005);
@@ -96,6 +101,9 @@ div.theme {
 		inset 0 0 0 #d8e8ff;
 	transition: box-shadow 100ms linear;
 	cursor: pointer;
+}
+div#theme-settings div {
+	width: 400px;
 }
 div.color-option-container {
 	display: flex;
@@ -134,7 +142,7 @@ div.color-option.active, div.theme.active {
 		inset 0 0 10px #d8e8ff88,
 		inset 0 0 0 1.5px #d8e8ff;
 }
-div.color-option:not(.active):hover, div.theme:not(.active):hover {
+div.color-option:not(.active):hover, div.theme:not(.active):hover, div#theme-settings div:hover {
 	box-shadow: 0 0 10px #d8e8ff33,
 		0 5px 4px -3px #d8e8ff33,
 		inset 0 0 10px #d8e8ff44,
