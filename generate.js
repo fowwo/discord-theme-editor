@@ -17,6 +17,7 @@ function addSection(name, property, description = "") {
 	defaultOption.classList.add("default", "active");
 	defaultOption.onclick = () => {
 		let input = document.getElementById("hex-input");
+		if (editing) themes.custom[property] = undefined;
 		input.disabled = true;
 		setActiveColorOption(defaultOption, property);
 		showColorInfo(`default-${property}`);
@@ -28,7 +29,12 @@ function addSection(name, property, description = "") {
 		let option = createColorOption(property, `var(--p${i})`);
 		option.onclick = () => {
 			let input = document.getElementById("hex-input");
-			input.disabled = false;
+			if (editing) {
+				themes.custom[property] = index;
+				input.disabled = false;
+			} else {
+				input.disabled = true;
+			}
 			setActiveColorOption(option, property);
 			showColorInfo(`p${index}`);
 		};

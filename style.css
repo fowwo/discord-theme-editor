@@ -75,6 +75,28 @@ div#settings::-webkit-scrollbar-thumb {
 div#settings::-webkit-scrollbar-thumb:hover {
 	background-color: #5b5f66;
 }
+div#theme-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-basis: content;
+	justify-content: space-evenly;
+}
+div.theme {
+	margin: 5px;
+	background-color: #0005;
+	background-image: linear-gradient(#fff2, #0000 25%, #0005);
+	text-align: center;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 0 #d8e8ff44,
+		0 5px 4px -3px #0008,
+		inset 0 0 0 #d8e8ff44,
+		inset 0 0 0 #d8e8ff;
+	transition: box-shadow 100ms linear;
+	cursor: pointer;
+}
 div.color-option-container {
 	display: flex;
 	user-select: none;
@@ -105,14 +127,14 @@ div.color-option.default {
 	width: 85px;
 	flex-shrink: 0;
 }
-div.color-option.active {
-	color: #d8e8ff;
+div.color-option.active { color: #d8e8ff; }
+div.color-option.active, div.theme.active {
 	box-shadow: 0 0 15px #d8e8ff44,
 		0 5px 4px -3px #d8e8ff66,
 		inset 0 0 10px #d8e8ff88,
 		inset 0 0 0 1.5px #d8e8ff;
 }
-div.color-option:not(.active):hover {
+div.color-option:not(.active):hover, div.theme:not(.active):hover {
 	box-shadow: 0 0 10px #d8e8ff33,
 		0 5px 4px -3px #d8e8ff33,
 		inset 0 0 10px #d8e8ff44,
