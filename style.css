@@ -48,9 +48,6 @@ div#palette-container {
 	max-width: 900px;
 	height: 100px;
 	flex-shrink: 0;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 200ms linear;
 }
 div#settings {
 	box-sizing: border-box;

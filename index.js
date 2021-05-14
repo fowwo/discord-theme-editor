@@ -36,9 +36,6 @@ function displayColor(color, property) {
  * @param {String} property - The color property.
  */
 function showColorInfo(property) {
-	let container = document.getElementById("palette-container");
-	container.style.visibility = "visible";
-	container.style.opacity = "100%";
 	let selectedColor = document.getElementById("selected-color");
 	selectedColor.style.backgroundColor = `var(--${property})`;
 	let rgba = getComputedStyle(selectedColor).getPropertyValue("background-color").split("(")[1].split(")")[0].split(",").map((x) => parseFloat(x.trim()));
@@ -49,7 +46,6 @@ function showColorInfo(property) {
 	if (rgba.length === 3) rgba[3] = 1;
 	document.getElementById("a-value").innerHTML = rgba[3].toFixed(2);
 }
-
 
 /**
  * Converts an RGBA representation of a color

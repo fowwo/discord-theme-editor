@@ -258,8 +258,8 @@
 	<div id="palette-container">
 		<div id="selected-color"></div>
 		<div id="selected-color-text">
-			<div id="selected-color-hex">#<input id="hex-input" class="text-input" type="text" maxlength="8" onkeydown="hexInputFilter(event)" onchange="if (validHex(this.value)) { setCurrentColor(`#${this.value}`); this.blur(); }"></div>
-			<div id="selected-color-rgb">(<span id="r-value"></span>, <span id="g-value"></span>, <span id="b-value"></span>, <span id="a-value"></span>)</div>
+			<div id="selected-color-hex">#<input disabled id="hex-input" class="text-input" type="text" maxlength="8" value="00000000" onkeydown="hexInputFilter(event)" onchange="if (validHex(this.value)) { setCurrentColor(`#${this.value}`); this.blur(); }"></div>
+			<div id="selected-color-rgb">(<span id="r-value">0</span>, <span id="g-value">0</span>, <span id="b-value">0</span>, <span id="a-value">0.00</span>)</div>
 		</div>
 	</div>
 	<script src="index.js"></script>
