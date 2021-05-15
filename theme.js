@@ -107,6 +107,7 @@ Object.keys(themes).forEach((key, keyIndex, keys) => {
 	if (colorIndex !== undefined) color = getComputedStyle(document.documentElement).getPropertyValue(`--${key}${themes[key]["text-normal"]}`);
 
 	let theme = document.createElement("div");
+	theme.id = `theme-${key}`;
 	theme.classList.add("theme");
 	theme.style.backgroundColor = backgroundColor;
 	theme.style.color = color;
