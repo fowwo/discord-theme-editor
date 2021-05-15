@@ -46,7 +46,7 @@ function loadTheme(theme) {
 
 	document.getElementById("theme-name-overwrite").innerHTML = themes[theme].name;
 	document.getElementById("theme-name-txt").innerHTML = themes[theme].name;
-	document.getElementById("theme-name-csv").innerHTML = themes[theme].name;
+	document.getElementById("theme-name-css").innerHTML = themes[theme].name;
 
 	// Remove selected colors
 	Object.keys(active).forEach((property, propertyIndex, properties) => {
