@@ -134,16 +134,14 @@ function setEditing(bool) {
 Object.keys(themes).forEach((key, keyIndex, keys) => {
 	let bgIndex = themes[key]["background-primary"];
 	let colorIndex = themes[key]["text-normal"];
-	var backgroundColor, color;
-	
-	if (bgIndex !== undefined) backgroundColor = getComputedStyle(document.documentElement).getPropertyValue(`--${key}${themes[key]["background-primary"]}`);
-	if (colorIndex !== undefined) color = getComputedStyle(document.documentElement).getPropertyValue(`--${key}${themes[key]["text-normal"]}`);
 
 	let theme = document.createElement("div");
 	theme.id = `theme-${key}`;
 	theme.classList.add("theme");
-	theme.style.backgroundColor = backgroundColor;
-	theme.style.color = color;
+	theme.style.backgroundColor = "var(--default-background-color)";
+	theme.style.color = "var(--default-text-normal)";
+	if (bgIndex !== undefined) theme.style.backgroundColor = `var(--${key}${bgIndex})`;
+	if (colorIndex !== undefined) theme.style.color = `var(--${key}${colorIndex})`;
 	theme.innerHTML = themes[key].name;
 	theme.onclick = () => {
 		loadTheme(key);
