@@ -44,6 +44,7 @@ var themes = {
 
 function loadTheme(theme) {
 
+	document.getElementById("theme-name-overwrite").innerHTML = themes[theme].name;
 	document.getElementById("theme-name-txt").innerHTML = themes[theme].name;
 	document.getElementById("theme-name-csv").innerHTML = themes[theme].name;
 
@@ -91,6 +92,32 @@ function downloadTheme(theme, extension) {
 	document.body.appendChild(a);
 	a.click();
 	document.body.removeChild(a);
+}
+
+function overwriteCustomTheme(theme) {
+	if (confirm(`You are about to overwrite your custom theme with ${theme}'s colors.`)) {
+		theme = theme.toLowerCase();
+
+		// Swap colors to theme colors
+		for (var i = 0; i <= 13; i++) {
+			document.documentElement.style.setProperty(`--custom${i}`, `var(--${theme}${i})`);
+		}
+
+		// Select colors according to theme
+		let containers = document.getElementsByClassName("color-option-container");
+		for (var i = 0; i < containers.length; i++) {
+			let id = containers[i].id;
+			themes.custom[id] = themes[theme][id];
+		};
+
+		loadTheme("custom");
+		setEditing(true);
+		let backgroundColor = document.getElementById("selected-color").style.backgroundColor;
+		showColorInfo(backgroundColor.substring(6, backgroundColor.length - 1));
+		activeTheme.classList.remove("active");
+		activeTheme = document.getElementById("theme-custom");
+		activeTheme.classList.add("active");
+	}
 }
 
 function setEditing(bool) {
