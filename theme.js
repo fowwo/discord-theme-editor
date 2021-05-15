@@ -15,14 +15,15 @@ var themes = {
 		"background-floating": 5,
 		"background-message-hover": 2,
 		"background-accent": 4,
-		"text-normal": 7,
+		"text-normal": 8,
 		"text-muted": 5,
-		"header-primary": 7,
+		"header-primary": 8,
 		"header-secondary": 6,
 		"channels-default": 5,
-		"interactive-normal": 6,
-		"interactive-hover": 7,
-		"interactive-active": 8,
+		"textbox-markdown-syntax": 7,
+		"interactive-normal": 7,
+		"interactive-hover": 8,
+		"interactive-active": 9,
 		"interactive-muted": 3,
 		"background-modifier-hover": 1,
 		"background-modifier-active": 3,
@@ -30,7 +31,14 @@ var themes = {
 		"background-modifier-accent": 4,
 		"scrollbar-auto-thumb": 3,
 		"scrollbar-auto-track": 0,
-		"scrollbar-thin-thumb": 2
+		"scrollbar-thin-thumb": 2,
+		"deprecated-card-bg": 0,
+		"deprecated-quickswitcher-input-background": 2,
+		"deprecated-quickswitcher-input-placeholder": 7,
+		"deprecated-text-input-bg": 1,
+		"deprecated-text-input-border": 5,
+		"deprecated-text-input-border-hover": 7,
+		"deprecated-text-input-border-disabled": 0
 	}
 };
 
