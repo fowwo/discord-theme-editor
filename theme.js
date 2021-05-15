@@ -73,6 +73,12 @@ function loadTheme(theme) {
 			active[container.id] = container.children[themes[theme][container.id] + 1];
 		}
 	};
+
+	if (theme === "custom") {
+		document.getElementById("overwrite").classList.add("disabled");
+	} else {
+		document.getElementById("overwrite").classList.remove("disabled");
+	}
 }
 
 function downloadTheme(theme, extension) {

@@ -105,6 +105,13 @@ div.theme, div#theme-settings div {
 div#theme-settings div {
 	width: 400px;
 }
+div#theme-settings div#overwrite:not(.disabled) {
+	background-color: #a44;
+	color: #fff;
+}
+div#theme-settings div#overwrite.disabled {
+	cursor: default;
+}
 div.color-option-container {
 	display: flex;
 	user-select: none;
@@ -142,7 +149,7 @@ div.color-option.active, div.theme.active {
 		inset 0 0 10px #d8e8ff88,
 		inset 0 0 0 1.5px #d8e8ff;
 }
-div.color-option:not(.active):hover, div.theme:not(.active):hover, div#theme-settings div:hover {
+div.color-option:not(.active):hover, div.theme:not(.active):hover, div#theme-settings div:not(.disabled):hover {
 	box-shadow: 0 0 10px #d8e8ff33,
 		0 5px 4px -3px #d8e8ff33,
 		inset 0 0 10px #d8e8ff44,
