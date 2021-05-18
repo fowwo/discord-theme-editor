@@ -128,7 +128,13 @@ function overwriteCustomTheme(theme) {
 
 function setEditing(bool) {
 	editing = bool;
-	document.getElementById("hex-input").disabled = !bool || document.getElementById("selected-color").style.backgroundColor.startsWith("var(--default-");
+	if (bool && !document.getElementById("selected-color").style.backgroundColor.startsWith("var(--default-")) {
+		document.getElementById("hex-input").disabled = false;
+		document.getElementById("paste").classList.remove("disabled");
+	} else {
+		document.getElementById("hex-input").disabled = true;
+		document.getElementById("paste").classList.add("disabled");
+	}
 }
 
 Object.keys(themes).forEach((key, keyIndex, keys) => {
