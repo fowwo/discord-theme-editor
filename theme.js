@@ -55,7 +55,7 @@ function loadTheme(theme) {
 	active = {};
 
 	// Swap colors to theme colors
-	for (var i = 0; i <= 13; i++) {
+	for (var i = 0; i < maxColors; i++) {
 		document.documentElement.style.setProperty(`--p${i}`, `var(--${theme}${i})`);
 	}
 
@@ -105,7 +105,7 @@ function overwriteCustomTheme(theme) {
 		theme = theme.toLowerCase();
 
 		// Swap colors to theme colors
-		for (var i = 0; i <= 13; i++) {
+		for (var i = 0; i < maxColors; i++) {
 			document.documentElement.style.setProperty(`--custom${i}`, `var(--${theme}${i})`);
 		}
 

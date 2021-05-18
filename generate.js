@@ -24,7 +24,7 @@ function addSection(name, property, description = "") {
 	};
 	active[property] = defaultOption;
 	container.appendChild(defaultOption);
-	for (var i = 0; i < 14; i++) {
+	for (var i = 0; i < maxColors; i++) {
 		let index = i;
 		let option = createColorOption(property, `var(--p${i})`);
 		option.onclick = () => {

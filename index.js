@@ -1,4 +1,5 @@
 var active = {};
+const maxColors = 14;
 
 /**
  * Sets the active color option of a given property.
