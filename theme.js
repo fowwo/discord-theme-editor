@@ -128,7 +128,7 @@ function overwriteCustomTheme(theme) {
 
 function setEditing(bool) {
 	editing = bool;
-	if (bool && !document.getElementById("selected-color").style.backgroundColor.startsWith("var(--default-")) {
+	if (bool && document.getElementById("selected-color").style.backgroundColor.startsWith("var(--p")) {
 		document.getElementById("hex-input").disabled = false;
 		document.getElementById("paste").classList.remove("disabled");
 	} else {
