@@ -26,6 +26,26 @@ hr {
 	border: 1.5px #5b5f6655 inset;
 	border-radius: 2px;
 }
+input[type="text"] {
+	padding: 0;
+	border: none;
+	background-color: #0002;
+	font-family: 'PT Sans', sans-serif;
+	border-radius: 10px;
+	transition-property: background-color, box-shadow;
+	transition-duration: 100ms;
+}
+input[type="text"]:disabled {
+	background-color: transparent;
+}
+input[type="text"]:enabled:not(:focus):hover {
+	background-color: #0003;
+}
+input[type="text"]:focus {
+	outline: none;
+	background-color: #0004;
+	box-shadow: 0 0px 15px #d8e8ff18, inset 0 0 5px #0006;
+}
 p {
 	margin: 0 0 5px 0;
 	font-size: 14px;
@@ -183,23 +203,6 @@ div#selected-color-hex, input#hex-input {
 	font-size: 32px;
 	color: #d8e8ff;
 	text-shadow: 0 3px 1px #000;
-}
-input.text-input {
-	padding: 0;
-	border: none;
-	background-color: transparent;
-	font-family: 'PT Sans', sans-serif;
-	border-radius: 10px;
-	transition-property: background-color, box-shadow;
-	transition-duration: 100ms;
-}
-input.text-input:not(:disabled):hover {
-	background-color: #0002;
-}
-input.text-input:focus {
-	outline: none;
-	background-color: #0005;
-	box-shadow: 0 0px 15px #d8e8ff18, inset 0 0 5px #0006;
 }
 input#hex-input {
 	width: 169px;
