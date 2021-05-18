@@ -280,7 +280,7 @@
 			</div>
 		</div>
 		<div id="selected-color-text">
-			<div id="selected-color-hex">#<input disabled id="hex-input" type="text" maxlength="8" value="00000000" onkeydown="hexInputFilter(event)" onchange="if (validHex(this.value)) { setCurrentColor(`#${this.value}`); this.blur(); }"></div>
+			<div id="selected-color-hex">#<input disabled id="hex-input" type="text" maxlength="8" value="00000000" spellcheck="false" onkeydown="hexInputFilter(event)" onchange="if (validHex(this.value)) { setCurrentColor(`#${this.value}`); this.blur(); }"></div>
 			<div id="selected-color-rgb">(<span id="r-value">0</span>, <span id="g-value">0</span>, <span id="b-value">0</span>, <span id="a-value">0.00</span>)</div>
 		</div>
 	</div>
