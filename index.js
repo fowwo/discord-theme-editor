@@ -118,3 +118,17 @@ function hexInputFilter(event) {
 	) return inputFilter(event);
 	return true;
 }
+
+/**
+ * Handles pasting clipboard content into hex input.
+ */
+function pasteHex() {
+	if (!document.getElementById("paste").classList.contains("disabled")) navigator.clipboard.readText().then(hex => {
+		if (validHex(hex)) {
+			if (hex.startsWith("#")) hex = hex.substring(1);
+			setCurrentColor(`#${hex}`);
+		} else {
+			document.getElementById("paste-icon").animate([{ fill: "#f00" }],{ direction: 'reverse', duration: 500 });
+		}
+	});
+}

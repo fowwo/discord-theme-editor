@@ -16,9 +16,9 @@ function addSection(name, property, description = "") {
 	let defaultOption = createColorOption(property, `var(--default-${property})`);
 	defaultOption.classList.add("default", "active");
 	defaultOption.onclick = () => {
-		let input = document.getElementById("hex-input");
 		if (editing) themes.custom[property] = undefined;
-		input.disabled = true;
+		document.getElementById("hex-input").disabled = true;
+		document.getElementById("paste").classList.add("disabled");
 		setActiveColorOption(defaultOption, property);
 		showColorInfo(`default-${property}`);
 	};
@@ -28,12 +28,13 @@ function addSection(name, property, description = "") {
 		let index = i;
 		let option = createColorOption(property, `var(--p${i})`);
 		option.onclick = () => {
-			let input = document.getElementById("hex-input");
 			if (editing) {
 				themes.custom[property] = index;
-				input.disabled = false;
+				document.getElementById("hex-input").disabled = false;
+				document.getElementById("paste").classList.remove("disabled");
 			} else {
-				input.disabled = true;
+				document.getElementById("hex-input").disabled = true;
+				document.getElementById("paste").classList.add("disabled");
 			}
 			setActiveColorOption(option, property);
 			showColorInfo(`p${index}`);
