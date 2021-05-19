@@ -142,7 +142,7 @@ function downloadTheme(theme, extension) {
 	str += ".theme-dark, .theme-light {\n";
 	Object.keys(themes[theme]).forEach((property, propertyIndex, properties) => {
 		if (themes[theme][property] !== undefined && property !== "name" && property !== "brand-experiment") {
-			let value = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme][property]}`);
+			let value = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme][property]}`).trim();
 			if (value != "") {
 				str += `\t--${property}: ${value};\n`;
 			} else {
