@@ -147,3 +147,51 @@ function pasteHex() {
 		}
 	});
 }
+
+/**
+ * Handles importing colors from import input.
+ */
+function importColors() {
+	let notice = document.getElementById("invalid-import-notice");
+	let list = document.getElementById("import-input").value
+		.split(/[^A-z0-9]+/g)
+		.filter((x) => { return x !== ""; })
+		.map((x) => { return `#${x}`; });
+	if (list.length === 0) {
+		notice.innerHTML = "Please enter a list of hexadecimal colors.";
+		notice.style.display = "initial";
+		return;
+	}
+	let invalid = [];
+	let str = "";
+	for (var i = 0; i < list.length; i++) {
+		let hex = `#${list[i].startsWith("#") ? list[i].substring(1) : list[i]}`;
+		if (!validHex(hex)) {
+			invalid.push(hex);
+		} else {
+			str += `    ${hex}\n`;
+		}
+	}
+	if (invalid.length === 0) {
+		notice.style.display = "none";
+		if (confirm(`You are about to overwrite your custom colors and replace them with the following colors:\n${str}`)) {
+			for (var i = 0; i < list.length; i++) {
+				document.documentElement.style.setProperty(`--custom${i}`, list[i]);
+			}
+			for (var i = list.length; i < maxColors; i++) {
+				document.documentElement.style.setProperty(`--custom${i}`, "#0000");
+			}
+			loadTheme("custom");
+		}
+	} else {
+		if (invalid.length === 1) {
+			notice.innerHTML = `${invalid[0]} is not a valid hexadecimal color.`;
+		} else if (invalid.length === 2) {
+			notice.innerHTML = `${invalid[0]} and ${invalid[1]} are not valid hexadecimal colors.`;
+		} else {
+			let last = invalid.pop();
+			notice.innerHTML = `${invalid.join(", ")}, and ${last} are not valid hexadecimal colors.`;
+		}
+		notice.style.display = "initial";
+	}
+}

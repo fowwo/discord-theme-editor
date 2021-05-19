@@ -261,6 +261,11 @@
 				<div style="background-color: #5a5; color: #fff" onclick="downloadTheme(activeTheme.innerHTML, 'txt')">Export <span id="theme-name-txt" style="font-weight: bold">Custom</span> as .txt</div>
 				<div style="background-color: #5a5; color: #fff" onclick="downloadTheme(activeTheme.innerHTML, 'css')">Export <span id="theme-name-css" style="font-weight: bold">Custom</span> as .css</div>
 			</div>
+			<p>Enter a list of hexadecimal colors separated by any non-alphanumeric characters to import as a color palette.</p>
+			<div style="display: flex">
+				<input id="import-input" type="text"><div id="import-button" onclick="importColors()">></div>
+			</div>
+			<p id="invalid-import-notice" style="color: #c55"></p>
 			<hr>
 		</div>
 	</div>

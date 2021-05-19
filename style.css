@@ -30,6 +30,7 @@ input[type="text"] {
 	padding: 0;
 	border: none;
 	background-color: #0002;
+	color: #d8e8ff;
 	font-family: 'PT Sans', sans-serif;
 	border-radius: 10px;
 	transition-property: background-color, box-shadow;
@@ -105,6 +106,7 @@ div#theme-settings {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 30px;
 }
 div.theme, div#theme-settings div {
 	margin: 5px;
@@ -131,6 +133,31 @@ div#theme-settings div#overwrite:not(.disabled) {
 }
 div#theme-settings div#overwrite.disabled {
 	cursor: default;
+}
+input#import-input {
+	width: 100%;
+	height: 25px;
+	font-size: 17px;
+	padding: 5px;
+}
+div#import-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	margin-left: 5px;
+	width: 35px;
+	height: 35px;
+	background-color: #5a5;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 5px;
+	background-image: linear-gradient(#fff2, #0000 25%, #0005);
+	transition: box-shadow 100ms linear;
+	cursor: pointer;
+}
+div#import-button:hover {
+	box-shadow: 0 0 0 1.5px #d8e8ff88 inset;
 }
 div.color-option-container {
 	display: flex;
