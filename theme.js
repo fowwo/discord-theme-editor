@@ -306,6 +306,27 @@ function setEditing(bool) {
 	}
 }
 
+function exportRaw(theme) {
+	theme = theme.toLowerCase();
+	let str = "";
+	let color = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}0`).trim();
+	let i = 0;
+	while (color !== "") {
+		str += `--${theme}${i}: ${color}\n`;
+		i++;
+		color = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${i}`).trim();
+	}
+	str += `\n"${theme}": ${JSON.stringify(themes[theme], null, 4)}\n`;
+
+	let a = document.createElement('a');
+	a.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(str));
+	a.setAttribute('download', `${theme}-theme-raw.txt`);
+	a.style.display = 'none';
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+}
+
 Object.keys(themes).forEach((key, keyIndex, keys) => {
 	let bgpIndex = themes[key]["background-primary"];
 	let bgsIndex = themes[key]["background-secondary"];
