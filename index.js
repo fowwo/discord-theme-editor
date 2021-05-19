@@ -49,6 +49,20 @@ function showColorInfo(property) {
 }
 
 /**
+ * Converts a hexadecimal representation of a color
+ * into an RGBA representation.
+ * @param {String} hex - The hexadecimal color.
+ */
+function hexToRGBA(hex) {
+	if (hex.startsWith("#")) hex = hex.substring(1);
+	let m = { '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15 };
+	if (hex.length === 3) return [17 * m[hex[0]], 17 * m[hex[1]], 17 * m[hex[2]], 1];
+	if (hex.length === 4) return [17 * m[hex[0]], 17 * m[hex[1]], 17 * m[hex[2]], m[hex[3]] / 15];
+	if (hex.length === 6) return [16 * m[hex[0]] + m[hex[1]], 16 * m[hex[2]] + m[hex[3]], 16 * m[hex[4]] + m[hex[5]], 1];
+	if (hex.length === 8) return [16 * m[hex[0]] + m[hex[1]], 16 * m[hex[2]] + m[hex[3]], 16 * m[hex[4]] + m[hex[5]], (16 * m[hex[6]] + m[hex[7]]) / 255];
+}
+
+/**
  * Converts an RGBA representation of a color
  * into an hexadecimal representation.
  * @param {Number[]} rgba - The RGBA color.

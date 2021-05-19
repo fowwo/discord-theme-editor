@@ -43,8 +43,10 @@
 	--monokai8: #f8f8f2;
 	--monokai9: #fff;
 	--monokai10: #e6db74;
+	--monokai11: #ae81ff;
 
 	/* Discord's default color palette */
+	--default-brand-experiment: #5865f2;
 	--default-text-warning: #faa61a;
 	--default-text-danger: #ed4245;
 	--default-info-positive-background: rgba(59,165,92,0.1);

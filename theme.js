@@ -33,6 +33,7 @@ var themes = {
 		"scrollbar-auto-thumb": 3,
 		"scrollbar-auto-track": 0,
 		"scrollbar-thin-thumb": 2,
+		"brand-experiment": 11,
 		"focus-primary": 10,
 		"deprecated-card-bg": 0,
 		"deprecated-card-editable-bg": 0,
@@ -85,10 +86,61 @@ function loadTheme(theme) {
 }
 
 function downloadTheme(theme, extension) {
-	let str = ".theme-dark, .theme-light {\n";
+	let str = "";
 	theme = theme.toLowerCase();
+	if (themes[theme]["brand-experiment"] !== undefined) {
+		let hex = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme]["brand-experiment"]}`).trim();
+		if (hex == "") hex = "#0000";
+		let rgba = hexToRGBA(hex);
+		str += `html.oldBrand, html.newBrand {\n\t--brand-experiment: ${hex};\n`;
+		if (rgba[3] === 1) {
+			for (var i = 0; i < 4; i++) {
+				let m = (12 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 100}: #${RGBAToHex([ Math.round((255 - rgba[0]) * m + rgba[0]), Math.round((255 - rgba[1]) * m + rgba[1]), Math.round((255 - rgba[2]) * m + rgba[2]) ])};\n`;
+				m = (11 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 130}: #${RGBAToHex([ Math.round((255 - rgba[0]) * m + rgba[0]), Math.round((255 - rgba[1]) * m + rgba[1]), Math.round((255 - rgba[2]) * m + rgba[2]) ])};\n`;
+				m = (10 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 160}: #${RGBAToHex([ Math.round((255 - rgba[0]) * m + rgba[0]), Math.round((255 - rgba[1]) * m + rgba[1]), Math.round((255 - rgba[2]) * m + rgba[2]) ])};\n`;
+			}
+			str += `\t--brand-experiment-500: ${hex};\n`;
+			for (var i = 0; i < 4; i++) {
+				let m = (12 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 530}: #${RGBAToHex([ Math.round(rgba[0] * m), Math.round(rgba[1] * m), Math.round(rgba[2] * m) ])};\n`;
+				m = (11 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 560}: #${RGBAToHex([ Math.round(rgba[0] * m), Math.round(rgba[1] * m), Math.round(rgba[2] * m) ])};\n`;
+				m = (10 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 600}: #${RGBAToHex([ Math.round(rgba[0] * m), Math.round(rgba[1] * m), Math.round(rgba[2] * m) ])};\n`;
+			}
+			for (var i = 5; i <= 95; i += 5) {
+				str += `\t--brand-experiment-${`${i}`.padStart(2, '0')}a: rgba(${rgba[0]}, ${rgba[1]}, ${rgba[2]}, ${`0.${`${i}`.padStart(2, '0')}`});\n`;
+			}
+		} else {
+			for (var i = 0; i < 4; i++) {
+				let m = (12 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 100}: #${RGBAToHex([ Math.round((255 - rgba[0]) * m + rgba[0]), Math.round((255 - rgba[1]) * m + rgba[1]), Math.round((255 - rgba[2]) * m + rgba[2]), rgba[3] ])};\n`;
+				m = (11 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 130}: #${RGBAToHex([ Math.round((255 - rgba[0]) * m + rgba[0]), Math.round((255 - rgba[1]) * m + rgba[1]), Math.round((255 - rgba[2]) * m + rgba[2]), rgba[3] ])};\n`;
+				m = (10 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 160}: #${RGBAToHex([ Math.round((255 - rgba[0]) * m + rgba[0]), Math.round((255 - rgba[1]) * m + rgba[1]), Math.round((255 - rgba[2]) * m + rgba[2]), rgba[3] ])};\n`;
+			}
+			str += `\t--brand-experiment-500: ${hex};\n`;
+			for (var i = 0; i < 4; i++) {
+				let m = (12 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 530}: #${RGBAToHex([ Math.round(rgba[0] * m), Math.round(rgba[1] * m), Math.round(rgba[2] * m), rgba[3] ])};\n`;
+				m = (11 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 560}: #${RGBAToHex([ Math.round(rgba[0] * m), Math.round(rgba[1] * m), Math.round(rgba[2] * m), rgba[3] ])};\n`;
+				m = (10 - 3 * i) / 13;
+				str += `\t--brand-experiment-${100 * i + 600}: #${RGBAToHex([ Math.round(rgba[0] * m), Math.round(rgba[1] * m), Math.round(rgba[2] * m), rgba[3] ])};\n`;
+			}
+			for (var i = 5; i <= 95; i += 5) {
+				str += `\t--brand-experiment-${`${i}`.padStart(2, '0')}a: rgba(${rgba[0]}, ${rgba[1]}, ${rgba[2]}, ${(rgba[3] * i / 100).toFixed(2)});\n`;
+			}
+		}
+		str += `}\n`;
+	}
+	str += ".theme-dark, .theme-light {\n";
 	Object.keys(themes[theme]).forEach((property, propertyIndex, properties) => {
-		if (themes[theme][property] !== undefined && property !== "name") {
+		if (themes[theme][property] !== undefined && property !== "name" && property !== "brand-experiment") {
 			let value = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme][property]}`);
 			if (value != "") {
 				str += `\t--${property}: ${value};\n`;

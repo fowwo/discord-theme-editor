@@ -102,6 +102,7 @@ addSection("Thin Thumb", "scrollbar-thin-thumb", "The thumb color of the thin sc
 addSection("Thin Track", "scrollbar-thin-track", "The track color of the thin scrollbar, which is seen when hovering over the channel and member lists.");
 hr();
 addHeading("Other");
+addSection("Brand", "brand-experiment", "The <span style='color: #7289da'>blurple</span> color used throughout Discord. Choose the main color and the rest will be generated for you.");
 addSection("Focus", "focus-primary", "The color of the outline when focusing on elements (using Tab).");
 addSection("Radio Button", "control-brand-foreground", "The color of active radio buttons.");
 addSection("Info Warning Foreground", "info-warning-foreground", "The foreground color of warning info boxes, but also the color of the small bar on the left of messages that mention you.");
