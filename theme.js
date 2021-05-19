@@ -35,6 +35,7 @@ var themes = {
 		"scrollbar-thin-thumb": 2,
 		"brand-experiment": 11,
 		"focus-primary": 10,
+		"control-brand-foreground": 11,
 		"deprecated-card-bg": 0,
 		"deprecated-card-editable-bg": 0,
 		"deprecated-quickswitcher-input-background": 2,
