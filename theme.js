@@ -272,15 +272,17 @@ function setEditing(bool) {
 }
 
 Object.keys(themes).forEach((key, keyIndex, keys) => {
-	let bgIndex = themes[key]["background-primary"];
+	let bgpIndex = themes[key]["background-primary"];
+	let bgsIndex = themes[key]["background-secondary"];
+	let bgtIndex = themes[key]["background-tertiary"];
 	let colorIndex = themes[key]["text-normal"];
 
 	let theme = document.createElement("div");
 	theme.id = `theme-${key}`;
 	theme.classList.add("theme");
-	theme.style.backgroundColor = "var(--default-background-color)";
+	theme.style.backgroundImage = "linear-gradient(#fff2, #0000 25%, #0005), linear-gradient(to right, var(--default-background-primary), var(--default-background-secondary), var(--default-background-tertiary))";
 	theme.style.color = "var(--default-text-normal)";
-	if (bgIndex !== undefined) theme.style.backgroundColor = `var(--${key}${bgIndex})`;
+	if (bgpIndex !== undefined && bgsIndex !== undefined && bgtIndex !== undefined) theme.style.backgroundImage = `linear-gradient(#fff2, #0000 25%, #0005), linear-gradient(to right, var(--${key}${bgpIndex}), var(--${key}${bgsIndex}), var(--${key}${bgtIndex}))`;
 	if (colorIndex !== undefined) theme.style.color = `var(--${key}${colorIndex})`;
 	theme.innerHTML = themes[key].name;
 	theme.onclick = () => { loadTheme(key); };
