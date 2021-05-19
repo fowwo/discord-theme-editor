@@ -89,7 +89,12 @@ function downloadTheme(theme, extension) {
 	theme = theme.toLowerCase();
 	Object.keys(themes[theme]).forEach((property, propertyIndex, properties) => {
 		if (themes[theme][property] !== undefined && property !== "name") {
-			str += `\t--${property}: ${getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme][property]}`)};\n`;
+			let value = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme][property]}`);
+			if (value != "") {
+				str += `\t--${property}: ${value};\n`;
+			} else {
+				str += `\t--${property}: transparent;\n`;
+			}
 		}
 	});
 	str += "}\n";
