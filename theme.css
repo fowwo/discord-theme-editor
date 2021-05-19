@@ -70,6 +70,18 @@
 	--peanut-butter8: #CC9F69;
 	--peanut-butter9: #FFE6A7;
 
+	/* brick by rikki */
+	--brick0: #461220;
+	--brick1: #69212d;
+	--brick2: #8c2f39;
+	--brick3: #9f3541;
+	--brick4: #b23a48;
+	--brick5: #c55a63;
+	--brick6: #d77a7d;
+	--brick7: #fcb9b2;
+	--brick8: #fdc5b7;
+	--brick9: #fed0bb;
+
 	/* Discord's default color palette */
 	--default-brand-experiment: #5865f2;
 	--default-text-warning: #faa61a;
