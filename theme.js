@@ -79,6 +79,15 @@ function loadTheme(theme) {
 		}
 	};
 
+	// Toggle theme buttons
+	activeTheme.classList.remove("active");
+	activeTheme = document.getElementById(`theme-${theme}`);
+	activeTheme.classList.add("active");
+
+	setEditing(theme === "custom");
+	let backgroundColor = document.getElementById("selected-color").style.backgroundColor;
+	showColorInfo(backgroundColor.substring(6, backgroundColor.length - 1));
+
 	if (theme === "custom") {
 		document.getElementById("overwrite").classList.add("disabled");
 	} else {
@@ -178,12 +187,6 @@ function overwriteCustomTheme(theme) {
 		};
 
 		loadTheme("custom");
-		setEditing(true);
-		let backgroundColor = document.getElementById("selected-color").style.backgroundColor;
-		showColorInfo(backgroundColor.substring(6, backgroundColor.length - 1));
-		activeTheme.classList.remove("active");
-		activeTheme = document.getElementById("theme-custom");
-		activeTheme.classList.add("active");
 	}
 }
 
@@ -210,15 +213,7 @@ Object.keys(themes).forEach((key, keyIndex, keys) => {
 	if (bgIndex !== undefined) theme.style.backgroundColor = `var(--${key}${bgIndex})`;
 	if (colorIndex !== undefined) theme.style.color = `var(--${key}${colorIndex})`;
 	theme.innerHTML = themes[key].name;
-	theme.onclick = () => {
-		loadTheme(key);
-		setEditing(key === "custom");
-		let backgroundColor = document.getElementById("selected-color").style.backgroundColor;
-		showColorInfo(backgroundColor.substring(6, backgroundColor.length - 1));
-		activeTheme.classList.remove("active");
-		activeTheme = theme;
-		activeTheme.classList.add("active");
-	};
+	theme.onclick = () => { loadTheme(key); };
 	if (key === "custom") {
 		activeTheme = theme;
 		activeTheme.classList.add("active");
