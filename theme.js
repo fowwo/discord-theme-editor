@@ -62,7 +62,7 @@ var themes = {
 		"header-primary": 8,
 		"header-secondary": 8,
 		"channels-default": 3,
-		"text-link": 7,
+		"text-link": 5,
 		"textbox-markdown-syntax": 2,
 		"interactive-normal": 6,
 		"interactive-hover": 6,
@@ -75,7 +75,7 @@ var themes = {
 		"scrollbar-auto-thumb": 1,
 		"scrollbar-auto-track": 9,
 		"scrollbar-thin-thumb": 3,
-		"brand-experiment": 10,
+		"brand-experiment": 8,
 		"focus-primary": 6,
 		"control-brand-foreground": 7,
 		"info-warning-foreground": 8
