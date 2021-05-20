@@ -82,6 +82,17 @@
 	--brick8: #fdc5b7;
 	--brick9: #fed0bb;
 
+	/* purble by rikki */
+	--purble0: #3d4551;
+	--purble1: #585c74;
+	--purble2: #737396;
+	--purble3: #8e9aaf;
+	--purble4: #cbc0d3;
+	--purble5: #e4d8fd;
+	--purble6: #adb7ff;
+	--purble7: #fa9ee9;
+	--purble8: #efd3d7;
+
 	/* Discord's default color palette */
 	--default-brand-experiment: #5865f2;
 	--default-text-warning: #faa61a;
