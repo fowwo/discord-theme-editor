@@ -139,19 +139,19 @@ input#import-input {
 	height: 25px;
 	font-size: 17px;
 	padding: 5px;
+	border-radius: 10px 0 0 10px;
 }
 div#import-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
-	margin-left: 5px;
 	width: 35px;
 	height: 35px;
 	background-color: #5a5;
 	color: #fff;
 	font-weight: bold;
-	border-radius: 5px;
+	border-radius: 0 5px 5px 0;
 	background-image: linear-gradient(#fff2, #0000 25%, #0005);
 	transition: box-shadow 100ms linear;
 	cursor: pointer;
