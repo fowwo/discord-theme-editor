@@ -61,7 +61,7 @@
 	--deprecated-text-input-prefix: #dcddde;
 }
 
-div#preview {
+div#main-preview {
 	background-color: var(--background-tertiary);
 	margin: 15px auto;
 	width: 100%;
@@ -72,30 +72,30 @@ div#preview {
 	overflow: hidden;
 	transition: background-color 100ms linear;
 }
-div#preview div {
+div#main-preview div {
 	transition: background-color 100ms linear;
 }
-div#preview div#top {
+div#main-preview div#top {
 	width: 100%;
 	height: 4%;
 }
-div#preview div#big-container {
+div#main-preview div#big-container {
 	width: 100%;
 	height: 96%;
 }
-div#preview div#guild-container {
+div#main-preview div#guild-container {
 	width: 5%;
 	height: 100%;
 	float: left;
 }
-div#preview div#channel-container {
+div#main-preview div#channel-container {
 	position: relative;
 	background-color: var(--background-secondary);
 	width: 17.5%;
 	height: 100%;
 	float: left;
 }
-div#preview div#user-container {
+div#main-preview div#user-container {
 	width: 100%;
 	height: 8%;
 	position: absolute;
@@ -104,17 +104,17 @@ div#preview div#user-container {
 	bottom: 0;
 	background-color: var(--background-secondary-alt);
 }
-div#preview div#main-container {
+div#main-preview div#main-container {
 	width: 77.5%;
 	height: 100%;
 	float: left;
 }
-div#preview div#header-container {
+div#main-preview div#header-container {
 	background-color: var(--background-primary);
 	width: 100%;
 	height: 8%;
 }
-div#preview div#chat-container {
+div#main-preview div#chat-container {
 	position: relative;
 	background-color: var(--background-primary);
 	box-sizing: border-box;
@@ -122,7 +122,7 @@ div#preview div#chat-container {
 	height: 92%;
 	float: left;
 }
-div#preview div#chat-container div#scrollbar-container {
+div#main-preview div#chat-container div#scrollbar-container {
 	box-sizing: border-box;
 	position: absolute;
 	padding: 0 1.5px;
@@ -130,20 +130,20 @@ div#preview div#chat-container div#scrollbar-container {
 	height: 89%;
 	right: 0;
 }
-div#preview div#chat-list-container {
+div#main-preview div#chat-list-container {
 	width: 98%;
 	height: 89%;
 }
-div#preview div#chat-messages {
+div#main-preview div#chat-messages {
 	box-sizing: border-box;
 	float: left;
 	width: 95.5%;
 }
-div#preview div#chat-input-container {
+div#main-preview div#chat-input-container {
 	width: 100%;
 	height: 11%;
 }
-div#preview div#member-container {
+div#main-preview div#member-container {
 	position: relative;
 	float: left;
 	background-color: var(--background-secondary);
@@ -152,14 +152,14 @@ div#preview div#member-container {
 	width: 22.5%;
 	height: 100%;
 }
-div#preview div#scrollbar-container div#scrollbar {
+div#main-preview div#scrollbar-container div#scrollbar {
 	position: relative;
 	background-color: var(--scrollbar-auto-track);
 	height: 100%;
 	width: 100%;
 	border-radius: 5px;
 }
-div#preview div#scrollbar-container div#scrollbar-button {
+div#main-preview div#scrollbar-container div#scrollbar-button {
 	position: absolute;
 	background-color: var(--scrollbar-auto-thumb);
 	height: 30%;
@@ -167,7 +167,7 @@ div#preview div#scrollbar-container div#scrollbar-button {
 	border-radius: 5px;
 	bottom: 0;
 }
-div#preview div.thin-scrollbar {
+div#main-preview div.thin-scrollbar {
 	position: absolute;
 	height: 100%;
 	width: 3px;
@@ -175,7 +175,7 @@ div#preview div.thin-scrollbar {
 	right: 0;
 	transition-property: background-color;
 }
-div#preview div.thin-scrollbar-button {
+div#main-preview div.thin-scrollbar-button {
 	position: absolute;
 	margin: 0 25%;
 	height: 30%;
@@ -184,44 +184,44 @@ div#preview div.thin-scrollbar-button {
 	top: 1px;
 	transition-property: background-color;
 }
-div#preview div#member-container:hover div.thin-scrollbar {
+div#main-preview div#member-container:hover div.thin-scrollbar {
 	background-color: var(--scrollbar-thin-track);
 }
-div#preview div#member-container:hover div.thin-scrollbar-button {
+div#main-preview div#member-container:hover div.thin-scrollbar-button {
 	background-color: var(--scrollbar-thin-thumb);
 }
-div#preview div#channel-list-container:hover div.thin-scrollbar {
+div#main-preview div#channel-list-container:hover div.thin-scrollbar {
 	background-color: var(--scrollbar-thin-track);
 }
-div#preview div#channel-list-container:hover div.thin-scrollbar-button {
+div#main-preview div#channel-list-container:hover div.thin-scrollbar-button {
 	background-color: var(--scrollbar-thin-thumb);
 }
 
-div#preview div.text {
+div#main-preview div.text {
 	display: inline;
 	float: left;
 	background-color: #bdf;
 	height: 6px;
 	border-radius: 3px;
 }
-div#preview div.text.tiny {
+div#main-preview div.text.tiny {
 	width: 35px;
 }
-div#preview div.text.short {
+div#main-preview div.text.short {
 	width: 47px;
 }
-div#preview div.text.medium {
+div#main-preview div.text.medium {
 	width: 100px;
 }
-div#preview div.text.long {
+div#main-preview div.text.long {
 	width: 150px;
 }
-div#preview div.text.thin {
+div#main-preview div.text.thin {
 	height: 4px;
 	border-radius: 2px;
 }
 
-div#preview div.icon-holder {
+div#main-preview div.icon-holder {
 	display: inline;
 	float: left;
 	background-color: var(--interactive-normal);
@@ -229,10 +229,10 @@ div#preview div.icon-holder {
 	width: 9px;
 	border-radius: 4.5px;
 }
-div#preview div.icon-holder:hover {
+div#main-preview div.icon-holder:hover {
 	background-color: var(--interactive-hover);
 }
-div#preview div.avatar {
+div#main-preview div.avatar {
 	display: inline;
 	float: left;
 	background-color: #0006;
@@ -240,7 +240,7 @@ div#preview div.avatar {
 	height: 14px;
 	border-radius: 7px;
 }
-div#preview div.guild-logo {
+div#main-preview div.guild-logo {
 	margin: 0 auto 3px auto;
 	box-sizing: border-box;
 	padding: 6px;
@@ -250,81 +250,81 @@ div#preview div.guild-logo {
 	border-radius: 9px;
 	transition: background-color 100ms linear, border-radius 150ms linear;
 }
-div#preview div.guild-logo#main {
+div#main-preview div.guild-logo#main {
 	padding: 4px;
 }
-div#preview div.guild-logo div.guild-logo-text {
+div#main-preview div.guild-logo div.guild-logo-text {
 	background-color: var(--text-normal);
 	width: 100%;
 	height: 100%;
 	border-radius: 3px;
 }
-div#preview div.guild-logo#main div.guild-logo-text {
+div#main-preview div.guild-logo#main div.guild-logo-text {
 	border-radius: 5px;
 }
-div#preview div.guild-logo:hover {
+div#main-preview div.guild-logo:hover {
 	background-color: #7289da;
 	border-radius: 5px;
 }
-div#preview div.guild-logo:hover div.guild-logo-text {
+div#main-preview div.guild-logo:hover div.guild-logo-text {
 	background-color: #fff;
 }
-div#preview div#guild-separator {
+div#main-preview div#guild-separator {
 	background-color: var(--background-modifier-accent);
 	margin: 0 auto 3px auto;
 	height: 1px;
 	width: 50%;
 }
 
-div#preview div.user {
+div#main-preview div.user {
 	min-height: 14px;
 	padding: 2px;
 	border-radius: 2px;
 }
-div#preview div.user div.user-text div {
+div#main-preview div.user div.user-text div {
 	margin: 1px 1px 1px 3px;
 }
-div#preview div.user div.user-text div.status {
+div#main-preview div.user div.user-text div.status {
 	background-color: var(--channels-default);
 }
 
-div#preview div#user-container div.user {
+div#main-preview div#user-container div.user {
 	box-sizing: border-box;
 	width: 42px;
 	float: left;
 }
-div#preview div#user-container div.text {
+div#main-preview div#user-container div.text {
 	width: 20px;
 }
-div#preview div#user-container div.icon-holder {
+div#main-preview div#user-container div.icon-holder {
 	margin: 5px 1.5px;
 }
-div#preview div#user-container div#username {
+div#main-preview div#user-container div#username {
 	background-color: var(--header-primary);
 }
 
-div#preview div#chat-container div.message {
+div#main-preview div#chat-container div.message {
 	margin: 5px 0;
 	padding: 2px 6px;
 	width: 100%;
 	height: 14px;
 }
-div#preview div#chat-container div.message:hover {
+div#main-preview div#chat-container div.message:hover {
 	background-color: var(--background-message-hover);
 }
-div#preview div#chat-container div.message div.message-text {
+div#main-preview div#chat-container div.message div.message-text {
 	float: left;
 	padding: 1px 6px;
 }
-div#preview div#chat-container div.message div.message-text div.time {
+div#main-preview div#chat-container div.message div.message-text div.time {
 	margin: 1px 0 0 3px;
 	background-color: var(--text-muted);
 }
-div#preview div#chat-container div.message div.chat {
+div#main-preview div#chat-container div.message div.chat {
 	margin-top: 2px;
 	background-color: var(--text-normal);
 }
-div#preview div#chat-container div#chat-input-container div#chat-input {
+div#main-preview div#chat-container div#chat-input-container div#chat-input {
 	box-sizing: border-box;
 	height: 18px;
 	margin: 1px 8px;
@@ -332,23 +332,23 @@ div#preview div#chat-container div#chat-input-container div#chat-input {
 	background-color: var(--channeltextarea-background);
 	border-radius: 3px;
 }
-div#preview div#chat-container div#chat-input-container div#right-icons {
+div#main-preview div#chat-container div#chat-input-container div#right-icons {
 	float: right;
 }
-div#preview div#chat-container div#chat-input-container div#right-icons div.icon-holder {
+div#main-preview div#chat-container div#chat-input-container div#right-icons div.icon-holder {
 	margin-left: 4px;
 }
 
-div#preview div#header-icon-container {
+div#main-preview div#header-icon-container {
 	display: inline;
 	float: right;
 	margin: 0 4px;
 }
-div#preview div#header-icon-container > div.icon-holder {
+div#main-preview div#header-icon-container > div.icon-holder {
 	margin: 7px 2px;
 }
 
-div#preview div#message-search {
+div#main-preview div#message-search {
 	display: inline;
 	float: left;
 	background-color: var(--background-tertiary);
@@ -358,75 +358,75 @@ div#preview div#message-search {
 	border-radius: 2px;
 }
 
-div#preview div#guild-name {
+div#main-preview div#guild-name {
 	background-color: var(--header-primary);
 	display: block;
 	float: none;
 	width: 60px;
 	margin: 8px;
 }
-div#preview div#channel-name {
+div#main-preview div#channel-name {
 	background-color: var(--header-primary);
 	margin: 8px;
 }
-div#preview div#channel-description {
+div#main-preview div#channel-description {
 	background-color: var(--header-secondary);
 	margin: 8px 0;
 }
 
-div#preview div#channel-list-container {
+div#main-preview div#channel-list-container {
 	position: relative;
 	height: 84%;
 }
-div#preview ul#channel-list li {
+div#main-preview ul#channel-list li {
 	padding: 2px 4px;
 	margin: 0 3px;
 	min-height: 10px;
 	border-radius: 2px;
 	transition: background-color 100ms linear;
 }
-div#preview ul#channel-list li:hover {
+div#main-preview ul#channel-list li:hover {
 	background-color: var(--background-modifier-hover);
 }
 
-div#preview ul#channel-list li.active {
+div#main-preview ul#channel-list li.active {
 	background-color: var(--background-modifier-selected) !important;
 }
-div#preview ul#channel-list li div {
+div#main-preview ul#channel-list li div {
 	margin: 2px 2px 0 0;
 	background-color: var(--channels-default);
 }
-div#preview ul#channel-list li div.text {
+div#main-preview ul#channel-list li div.text {
 	width: 54px;
 }
-div#preview ul#channel-list li.active div.text {
+div#main-preview ul#channel-list li.active div.text {
 	background-color: var(--interactive-active) !important;
 }
-div#preview ul#channel-list li:hover div {
+div#main-preview ul#channel-list li:hover div {
 	background-color: var(--interactive-hover);
 }
-div#preview ul#channel-list li div.icon-holder {
+div#main-preview ul#channel-list li div.icon-holder {
 	float: left;
 	width: 6px;
 	height: 6px;
 	border-radius: 3px;
 	background-color: var(--text-muted);
 }
-div#preview ul#channel-list li.muted div {
+div#main-preview ul#channel-list li.muted div {
 	background-color: var(--interactive-muted);
 	transition-property: background-color, opacity;
 }
-div#preview ul#channel-list li.muted:hover div.text {
+div#main-preview ul#channel-list li.muted:hover div.text {
 	background-color: var(--interactive-hover);
 	opacity: 60%;
 }
 
-div#preview div#member-container div.role {
+div#main-preview div#member-container div.role {
 	float: none;
 	display: block;
 	margin: 10px 2px 2px 2px;
 	background-color: var(--channels-default);
 }
-div#preview div#member-container div.user:hover {
+div#main-preview div#member-container div.user:hover {
 	background-color: var(--background-modifier-hover);
 }
