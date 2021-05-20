@@ -61,9 +61,21 @@
 	--deprecated-text-input-prefix: #dcddde;
 }
 
+div.preview-container > div {
+	padding: 0 15px;
+}
+div.preview-container div.preview {
+	position: sticky;
+	margin: -15px 0;
+	padding: 15px 0;
+	top: 0;
+	background-color: #36393f;
+	background-image: linear-gradient(to right, #36393f, #36393f00, #36393f), linear-gradient(#46494f00, #46494f44);
+	box-shadow: 0 100px 75px -100px #0004;
+}
 div#main-preview {
 	background-color: var(--background-tertiary);
-	margin: 15px auto;
+	margin: 0 auto;
 	width: 100%;
 	max-width: 470px;
 	height: 300px;

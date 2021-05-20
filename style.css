@@ -73,7 +73,7 @@ div#palette-container {
 div#settings {
 	box-sizing: border-box;
 	margin: 0 auto;
-	padding: 15px;
+	padding-bottom: 15px;
 	max-width: 900px;
 	height: 100%;
 	overflow-y: scroll;
