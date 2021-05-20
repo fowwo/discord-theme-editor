@@ -380,7 +380,7 @@ function exportRaw(theme) {
 	let color = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}0`).trim();
 	let i = 0;
 	while (color !== "") {
-		str += `--${theme}${i}: ${color}\n`;
+		str += `--${theme}${i}: ${color};\n`;
 		i++;
 		color = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${i}`).trim();
 	}
