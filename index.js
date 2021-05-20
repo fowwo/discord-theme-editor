@@ -196,3 +196,18 @@ function importColors() {
 		notice.style.display = "initial";
 	}
 }
+
+/**
+ * Downloads a file containing the given text.
+ * @param {String} text - The text to include in the file.
+ * @param {String} name - The name of the file.
+ */
+function downloadText(text, name) {
+	let a = document.createElement('a');
+	a.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	a.setAttribute('download', name);
+	a.style.display = 'none';
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+}

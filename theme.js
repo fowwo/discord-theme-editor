@@ -269,8 +269,41 @@ function loadTheme(theme) {
 }
 
 function downloadTheme(theme, extension) {
+	downloadText(themeToString(theme), `${theme}-theme.${extension}`);
+}
+
+function overwriteCustomTheme(theme) {
+	if (confirm(`You are about to overwrite your custom theme with ${theme}'s colors.`)) {
+
+		// Swap colors to theme colors
+		for (var i = 0; i < maxColors; i++) {
+			document.documentElement.style.setProperty(`--custom${i}`, `var(--${theme}${i})`);
+		}
+
+		// Select colors according to theme
+		let containers = document.getElementsByClassName("color-option-container");
+		for (var i = 0; i < containers.length; i++) {
+			let id = containers[i].id;
+			themes.custom[id] = themes[theme][id];
+		};
+
+		loadTheme("custom");
+	}
+}
+
+function setEditing(bool) {
+	editing = bool;
+	if (bool && document.getElementById("selected-color").style.backgroundColor.startsWith("var(--p")) {
+		document.getElementById("hex-input").disabled = false;
+		document.getElementById("paste").classList.remove("disabled");
+	} else {
+		document.getElementById("hex-input").disabled = true;
+		document.getElementById("paste").classList.add("disabled");
+	}
+}
+
+function themeToString(theme) {
 	let str = "";
-	theme = theme.toLowerCase();
 	if (themes[theme]["brand-experiment"] !== undefined) {
 		let hex = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${themes[theme]["brand-experiment"]}`).trim();
 		if (hex == "") hex = "#0000";
@@ -333,45 +366,7 @@ function downloadTheme(theme, extension) {
 		}
 	});
 	str += "}\n";
-
-	let a = document.createElement('a');
-	a.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(str));
-	a.setAttribute('download', `${theme}-theme.${extension}`);
-	a.style.display = 'none';
-	document.body.appendChild(a);
-	a.click();
-	document.body.removeChild(a);
-}
-
-function overwriteCustomTheme(theme) {
-	if (confirm(`You are about to overwrite your custom theme with ${theme}'s colors.`)) {
-		theme = theme.toLowerCase();
-
-		// Swap colors to theme colors
-		for (var i = 0; i < maxColors; i++) {
-			document.documentElement.style.setProperty(`--custom${i}`, `var(--${theme}${i})`);
-		}
-
-		// Select colors according to theme
-		let containers = document.getElementsByClassName("color-option-container");
-		for (var i = 0; i < containers.length; i++) {
-			let id = containers[i].id;
-			themes.custom[id] = themes[theme][id];
-		};
-
-		loadTheme("custom");
-	}
-}
-
-function setEditing(bool) {
-	editing = bool;
-	if (bool && document.getElementById("selected-color").style.backgroundColor.startsWith("var(--p")) {
-		document.getElementById("hex-input").disabled = false;
-		document.getElementById("paste").classList.remove("disabled");
-	} else {
-		document.getElementById("hex-input").disabled = true;
-		document.getElementById("paste").classList.add("disabled");
-	}
+	return str;
 }
 
 function exportRaw(theme) {
@@ -385,14 +380,7 @@ function exportRaw(theme) {
 		color = getComputedStyle(document.documentElement).getPropertyValue(`--${theme}${i}`).trim();
 	}
 	str += `\n"${theme}": ${JSON.stringify(themes[theme], null, 4)}\n`;
-
-	let a = document.createElement('a');
-	a.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(str));
-	a.setAttribute('download', `${theme}-theme-raw.txt`);
-	a.style.display = 'none';
-	document.body.appendChild(a);
-	a.click();
-	document.body.removeChild(a);
+	downloadText(str, `${theme}-theme-raw.txt`);
 }
 
 Object.keys(themes).forEach((key, keyIndex, keys) => {
