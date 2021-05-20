@@ -223,9 +223,8 @@ var themes = {
 
 function loadTheme(theme) {
 
-	document.getElementById("theme-name-overwrite").innerHTML = themes[theme].name;
-	document.getElementById("theme-name-txt").innerHTML = themes[theme].name;
-	document.getElementById("theme-name-css").innerHTML = themes[theme].name;
+	let collection = document.getElementsByClassName("theme-name-span");
+	for (var i = 0; i < collection.length; i++) collection.item(i).innerHTML = themes[theme].name;
 
 	// Remove selected colors
 	Object.keys(active).forEach((property, propertyIndex, properties) => {

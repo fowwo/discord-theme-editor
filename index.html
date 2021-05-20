@@ -17,9 +17,9 @@
 				<div id="theme-container"></div>
 				<hr>
 				<div id="theme-settings">
-					<div id="overwrite" class="disabled" onclick="if (!this.classList.contains('disabled')) overwriteCustomTheme(activeTheme.id.substring(6))">Overwrite <span style="font-weight: bold">Custom</span> with <span id="theme-name-overwrite" style="font-weight: bold">Custom</span> colors</div>
-					<div style="background-color: #5a5; color: #fff" onclick="downloadTheme(activeTheme.id.substring(6), 'txt')">Export <span id="theme-name-txt" style="font-weight: bold">Custom</span> as .txt</div>
-					<div style="background-color: #5a5; color: #fff" onclick="downloadTheme(activeTheme.id.substring(6), 'css')">Export <span id="theme-name-css" style="font-weight: bold">Custom</span> as .css</div>
+					<div id="overwrite" class="disabled" onclick="if (!this.classList.contains('disabled')) overwriteCustomTheme(activeTheme.id.substring(6))">Overwrite <span style="font-weight: bold">Custom</span> with <span class="theme-name-span" style="font-weight: bold">Custom</span> colors</div>
+					<div style="background-color: #5a5; color: #fff" onclick="downloadTheme(activeTheme.id.substring(6), 'txt')">Export <span class="theme-name-span" style="font-weight: bold">Custom</span> as .txt</div>
+					<div style="background-color: #5a5; color: #fff" onclick="downloadTheme(activeTheme.id.substring(6), 'css')">Export <span class="theme-name-span" style="font-weight: bold">Custom</span> as .css</div>
 				</div>
 				<p>Enter a list of hexadecimal colors separated by any non-alphanumeric characters to import as a color palette.</p>
 				<div style="display: flex">
