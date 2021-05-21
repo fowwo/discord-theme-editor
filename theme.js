@@ -180,6 +180,7 @@ var themes = {
 		"scrollbar-auto-thumb": 3,
 		"scrollbar-auto-track": 1,
 		"scrollbar-thin-thumb": 1,
+		"brand-experiment": 6,
 		"focus-primary": 4,
 		"control-brand-foreground": 8,
 		"info-warning-foreground": 6
