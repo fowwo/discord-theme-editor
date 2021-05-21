@@ -164,7 +164,7 @@ div#main-preview div#member-container {
 	width: 22.5%;
 	height: 100%;
 }
-div#main-preview div#scrollbar-container div#scrollbar {
+div#main-preview div#scrollbar-container div#preview-scrollbar {
 	position: relative;
 	background-color: var(--scrollbar-auto-track);
 	height: 100%;
