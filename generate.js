@@ -1,5 +1,6 @@
 function heading(text) {
 	let heading = document.createElement("h1");
+	heading.id = text.toLowerCase().replace(" ", "-");
 	heading.innerHTML = text;
 	return heading;
 }
